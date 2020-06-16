@@ -1,0 +1,26 @@
+{
+  "name": "template-simple-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development node src/index",
+    "build": "babel src -d dist",
+    "start": "cross-env NODE_ENV=production node dist/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "cross-env": "^7.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
