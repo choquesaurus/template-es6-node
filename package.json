@@ -1,17 +1,36 @@
 {
-  "name": "template-simple-backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "template-es6-node",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "bin":{
+    "ten":"dist/index.js"
+  },
   "dependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
     "inquirer": "^7.2.0",
     "promisify-child-process": "^4.1.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare":"npm run build",
+    "build":"babel src -d dist",
+    "start":"node dist/index.js"
+     
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WasauskyOK/template-es6-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WasauskyOK/template-es6-node/issues"
+  },
+  "homepage": "https://github.com/WasauskyOK/template-es6-node#readme",
+  "description": ""
 }
