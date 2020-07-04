@@ -1,10 +1,26 @@
 #  Template es6 node
-## Pre requisitos
-## Instalación
-## Uso
-## Autor
-<<<<<<< HEAD
-## Palabras clave
-=======
 
->>>>>>> 8a39e67b282230bad1136a7b1d2840ba68971f37
+Este modulo simplicara la creacion y configuracion de un proyecto con node y ES6
+  
+## Pre requisitos
+Se requiere conexión a internet  y tener cualquier distribucion de linux instalado
+
+## Instalación
+Este modulo necesita ser instalado globalmente , **no localmente**, para su funcionamiento correcto .
+
+Para instalar este modulo, necesitas ejecutar el siguiente comando en su terminal:
+
+```console    
+    npm i template-es6-node -g
+```
+
+## Uso
+Ejecuta desde tu terminal el siguiente comando  :
+    
+    ten
+
+## Autor
+*   Daniel Choquecahuana [portafolio](choquesaurus.com)
+## Licencia
+
+MIT
