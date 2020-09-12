@@ -91,12 +91,6 @@ inquirir
         "Carpeta_" + new Date().toLocaleString().replace(/[\s:\/]/g, "-"),
       // default:"Carpeta_"+new Date().toLocaleString().replace(/\//g,"-")
     },
-    //  {
-    //      type:'list',
-    //      name:"npm_init",
-    //      message:"¿Deseas el package.json automatico o manual ? (npm init --yes) :?",
-    //      choices:["Automatico","Manual"]
-    // },
 
     {
       type: "input",
@@ -140,27 +134,6 @@ inquirir
       default: "MIT",
       //when:(entrada) => entrada.npm_init == 'Manual'?true:false
     },
-    // {
-    //     type:'list',
-    //     name:"git",
-    //     message:"¿ Deseas que se agregue git ?",
-    //     choices:["Si","No"]
-    // },
-    /*
-    {
-        type:'list',
-        name:"set_remote_question",
-        message:"¿ Deseas Agregar la url remota ?",
-        choices:["Si","No"]
-    },
-    {
-        type:'input',
-        name:"add_remoto",
-        message:"¿ Ingresa la url remota de tu repositorio : ?",
-        default:'Hello',
-        when:(entrada) => entrada.set_remote_question == 'Si'?true:false
-    },
-    */
     {
       type: "checkbox",
       name: "archivos_primarios",
@@ -256,8 +229,5 @@ inquirir
       ? console.log("Abre con tu editor favorito :D")
       : await exec(`${data.open_proyect} .`, { cwd: data.working_dir });
     console.log("Adios :D");
-
-    //await exec(carpeta_src,{cwd:data.working_dir})
-    //await Promise.all(data.archivos_primarios.map(async (item)=>await exec (`touch ${item}`,{cwd:data.working_dir})))
   })
   .catch((error) => console.log(error));

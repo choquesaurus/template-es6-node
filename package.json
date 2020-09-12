@@ -1,6 +1,6 @@
 {
   "name": "template-es6-node",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "bin": {
     "ten": "dist/index.js"
@@ -31,5 +31,5 @@
     "url": "https://github.com/WasauskyOK/template-es6-node/issues"
   },
   "homepage": "https://github.com/WasauskyOK/template-es6-node#readme",
-  "description": ""
+  "description": "Este modulo simplicara la creacion y configuracion de un proyecto con node y ES6"
 }
