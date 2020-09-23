@@ -210,7 +210,9 @@ inquirir
       }
       await exec(`touch ${item}`, { cwd: data.working_dir });
     }
-    await exec("git clone https://github.com/WasauskyOK/src.git", {
+    console.log("Instalando paquetes necesarias ...");
+    await exec("npm install degit -g");
+    await exec("degit https://github.com/WasauskyOK/src.git", {
       cwd: data.working_dir,
     });
     if (data.npm_install == "Si") {
