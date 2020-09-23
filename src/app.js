@@ -211,10 +211,13 @@ inquirir
       await exec(`touch ${item}`, { cwd: data.working_dir });
     }
     console.log("Instalando paquetes necesarias ...");
-    await exec("sudo npm install degit -g");
-    await exec("degit https://github.com/WasauskyOK/src.git", {
-      cwd: data.working_dir,
-    });
+    //await exec("sudo npm install degit -g");
+    await exec(
+      "sudo npm install -g degit  && degit https://github.com/WasauskyOK/src.git src",
+      {
+        cwd: data.working_dir,
+      }
+    );
     if (data.npm_install == "Si") {
       console.log("Instalando dependencias necesarias ...");
       await exec("npm install", { cwd: data.working_dir });
