@@ -1,6 +1,6 @@
 {
   "name": "template-es6-node",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "dist/index.js",
   "bin": {
     "ten": "dist/index.js"
@@ -25,11 +25,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WasauskyOK/template-es6-node.git"
+    "url": "git+https://github.com/choquesaurus/template-es6-node.git"
   },
   "bugs": {
-    "url": "https://github.com/WasauskyOK/template-es6-node/issues"
+    "url": "https://github.com/choquesaurus/template-es6-node/issues"
   },
-  "homepage": "https://github.com/WasauskyOK/template-es6-node#readme",
+  "homepage": "https://github.com/choquesaurus/template-es6-node#readme",
   "description": "Este modulo simplicara la creacion y configuracion de un proyecto con node y ES6"
 }

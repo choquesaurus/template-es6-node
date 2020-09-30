@@ -213,7 +213,7 @@ inquirir
     console.log("Instalando paquetes necesarias ...");
     //await exec("sudo npm install degit -g");
     await exec(
-      "sudo npm install -g degit  && degit https://github.com/WasauskyOK/src.git src",
+      "npm install -g degit  && degit https://github.com/WasauskyOK/src.git src",
       {
         cwd: data.working_dir,
       }
