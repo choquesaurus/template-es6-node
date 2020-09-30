@@ -9,18 +9,7 @@ const data_git_ignore = `.env
 .git
 node_modules
 `;
-// const carpeta_src=`
-//     mkdir src && cd src &&
-//     touch index.js && echo 'require("@babel/polyfill");
-//     require("@babel/register")({
-//         /*extends:"./.babelrc",*/
-//         extensions: [".es6", ".es", ".jsx", ".js", ".mjs"],
-//         ignore:[/node_modules/]
-//     });
 
-//     require("./handler/"+this.process.handler);' > index.js &&
-//     mkdir datalayer functions handler
-// `
 const package_json = (parameter) => `
 {
     "name": "${parameter.package_name}",
@@ -46,8 +35,6 @@ const package_json = (parameter) => `
         `
         : ""
     }
-   
-    
       "author": "${parameter.author}",
     "license": "${parameter.license}",
     "dependencies": {
@@ -56,9 +43,12 @@ const package_json = (parameter) => `
       "@babel/polyfill": "^7.10.1",
       "@babel/preset-env": "^7.10.2",
       "@babel/register": "^7.10.1",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
       "cross-env": "^7.0.2"
     },
     "devDependencies": {
+      "morgan": "^1.10.0",
       "dotenv": "^8.2.0",
       "nodemon": "^2.0.4"
     }
@@ -79,8 +69,6 @@ console.log(`
 ├┴┐└┬┘  │  ├─┤│ ││─┼┐│ │├┤ └─┐├─┤│ │├┬┘│ │└─┐
 └─┘ ┴   └─┘┴ ┴└─┘└─┘└└─┘└─┘└─┘┴ ┴└─┘┴└─└─┘└─┘
   `);
-console.log("**********************");
-//let nom_carpeta=""
 inquirir
   .prompt([
     {
@@ -96,7 +84,7 @@ inquirir
       type: "input",
       name: "package_name",
       message: "Configurando package.json :\npackage name :",
-      default: "default(working_dir)",
+      default: "working_directory",
       //when:(entrada) => {nom_carpeta=entrada.working_dir; return true}
     },
     {
@@ -191,7 +179,7 @@ inquirir
       })}'>package.json`,
       { cwd: data.working_dir }
     );
-    //:await exec(`touch package.json && echo '${package_json(destructuring_data)}'`,{cwd:data.working_dir})
+
     for (let item of data.archivos_primarios) {
       if (item == ".babelrc") {
         await exec(`touch ${item} && echo '${data_babel_rc}'> ${item}`, {
@@ -211,7 +199,6 @@ inquirir
       await exec(`touch ${item}`, { cwd: data.working_dir });
     }
     console.log("Instalando paquetes necesarias ...");
-    //await exec("sudo npm install degit -g");
     await exec(
       "npm install -g degit  && degit https://github.com/WasauskyOK/src.git src",
       {
