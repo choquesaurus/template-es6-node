@@ -49,7 +49,6 @@ const package_json = (parameter) => `
     "dependencies": {
       "@babel/cli": "^7.10.1",
       "@babel/core": "^7.10.2",
-      "@babel/polyfill": "^7.10.1",
       "@babel/preset-env": "^7.10.2",
       "@babel/register": "^7.10.1",
       "cors": "^2.8.5",
