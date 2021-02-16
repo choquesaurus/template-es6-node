@@ -1,10 +1,19 @@
 import inquirir from "inquirer";
 import { exec } from "promisify-child-process";
-const data_babel_rc = `{
-    "presets": [
-        "@babel/preset-env"
+const data_babel_rc = `
+  // {
+  //     "presets": [
+  //         "@babel/preset-env"
+  //     ]
+  // }
+  {
+  "presets": [
+      ["@babel/preset-env", {
+        "useBuiltIns": "usage", // or "entry" usage
+        "corejs": 3
+      }]
     ]
-}`;
+  }`;
 const data_git_ignore = `.env
 .git
 node_modules
@@ -45,7 +54,9 @@ const package_json = (parameter) => `
       "@babel/register": "^7.10.1",
       "cors": "^2.8.5",
       "express": "^4.17.1",
-      "cross-env": "^7.0.2"
+      "cross-env": "^7.0.2",
+      "regenerator-runtime": "^0.13.7",
+      "core-js": "^3.8.3"
     },
     "devDependencies": {
       "morgan": "^1.10.0",
@@ -200,7 +211,7 @@ inquirir
     }
     console.log("Instalando paquetes necesarias ...");
     await exec(
-      "npm install -g degit  && degit https://github.com/WasauskyOK/src.git src",
+      "npm install -g degit  && degit https://github.com/choquesaurus/src.git src",
       {
         cwd: data.working_dir,
       }
